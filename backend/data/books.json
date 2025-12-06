@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "title": "The Angular Masterclass",
+    "author": "Sarah Smith",
+    "price": 2999,
+    "coverImage": "https://m.media-amazon.com/images/I/71kXa1M7CPL._SY466_.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Express.js in Action",
+    "author": "Evan Hahn",
+    "price": 3550,
+    "coverImage": "https://m.media-amazon.com/images/I/61r5f75dsEL._SY466_.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "price": 4200,
+    "coverImage": "https://m.media-amazon.com/images/I/41xShlnTZTL._SY445_SX342_.jpg"
+  },
+  {
+    "id": "4",
+    "title": "The Power of Your Subconscious Mind",
+    "author": "Joseph Murphy",
+    "price": 149,
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ_NbF9N9uJRbf21szrpeSgE1u7FEW68RBIYdzatpEL9lYzX4pn0dnC2l-6XEHinmshgtnkvy8riRgFcsq5FT7pW6pjdp_szwmnh1zJc-Q"
+  },
+  {
+    "id": "5",
+    "title": "The Final Experiment",
+    "author": "Yogesh SY",
+    "price": 255,
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT_monl3X7LM0aCdYewDwp5rOemOiH-k9zg3qmUSCDG_sP9pRNtl0zhAvaRDK3uisooZSIRkTCuTlZ7Pd7KJ4_F30urOpRURG6gRF5LVU4EVESVesfc2HFntw"
+  },
+  {
+    "id": "6",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "price": 304,
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTyqWzVWbzH7JvhgCdYEPTy_mxn72IYb25klO0-DeGrpY840d9JWK7qKdq3xgJyZ1pVkirattiL_g-bD2Enta1wafdvmY895F_tHV6klHcrIlsnLhetGpRrcA"
+  }
+]

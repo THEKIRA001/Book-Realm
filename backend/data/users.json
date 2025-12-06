@@ -5,5 +5,12 @@
     "email": "shubham@example.com",
     "password": "$2b$10$9RRflT/B7vdd6lIgJxPLSOgCbh759I2ytzR5BU4se6ZEdSg8lQ77C",
     "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Shubham"
+  },
+  {
+    "id": "a52e2388-4379-407a-be1a-b77f3786c28a",
+    "username": "Test 1",
+    "email": "test1@example.com",
+    "password": "$2b$10$YfvEZ622PG4/HOF201vk0eqLfBILE/6Ik7FRgwPHCFJiXabfVwCca",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Test 1"
   }
 ]

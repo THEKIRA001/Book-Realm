@@ -2,8 +2,8 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
-import { register, login, logout, getProfile } from './controllers/auth.controller';
-import { authenticateToken } from './middleware/auth.middleware';
+import booksRoutes from './routes/books.routes';
+import authRoutes from './routes/auth.routes';
 
 dotenv.config();
 
@@ -20,18 +20,11 @@ app.use(cookieParser());
 
 
 // Routes
-// Auth Public Route
-app.post('/api/register', register);
-app.post('/api/login', login);
-app.post('/api/logout', logout);
+// Auth Route
+app.use('/api', authRoutes);
 
-// Auth Protected Route
-app.get('/api/profile', authenticateToken, getProfile);
-
-// Book Route
-app.get('/api/books', (req: Request, res: Response) => {
-    res.json({ message: 'Books endpoint' });
-});
+// Book Routes
+app.use('/api/books', booksRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
