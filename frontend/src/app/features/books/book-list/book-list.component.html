@@ -1,0 +1,52 @@
+<div class="container page-container">
+    <header class="page-header">
+        <h1>Browse books</h1>
+        <p class="subtitle">Discover your next Favourite Books</p>
+    </header>
+
+    @if (store.loading()) {
+        <div class="center-state">
+            <div class="spinner"></div>
+            <p>Loading Library...</p>
+        </div>
+    }
+
+    @if (store.error()) {
+        <div class="center-state">
+            <div class="alert-error">
+                {{ store.error() }}
+                <button class="btn btn-outline btn-sm" (click)="store.loadBooks()">Try Again</button>
+            </div>
+        </div>
+    }
+
+    @if (!store.loading() && !store.error()) {
+        @if (store.totalBooks() === 0) {
+            <div class="center-state">
+                <p>No Books Found!</p>
+            </div>
+        } @else {
+            <div class="book-grid">
+                @for (book of store.allBooks(); track book.id){
+                    <article class="book-card">
+                        <div class="card-image">
+                            <img [src] = 'book.image' [alt]="book.title" loading="lazy" />
+                        </div>
+
+                        <div class="card-content">
+                            <h3 class="book-title" [title]="book.title">{{ book.title }}</h3>
+                            <p class="book-auther">by {{ book.author }}</p>
+
+                            <div class="card-footer">
+                                <span class="book-price">{{ book.price }}</span>
+                                <a [routerLink]="['/books', book.id]" class="btn btn-outline">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                }
+            </div>
+        }
+    }
+</div>

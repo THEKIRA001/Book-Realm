@@ -1,0 +1,121 @@
+.page-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+  }
+  
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+}
+
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 2rem;
+}
+
+
+.book-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card-image {
+  height: 250px;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-author {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+
+.center-state {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e2e8f0;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn-sm {
+  margin-top: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+}

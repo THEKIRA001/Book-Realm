@@ -1,24 +1,24 @@
 [
   {
     "id": "1",
-    "title": "The Angular Masterclass",
-    "author": "Sarah Smith",
-    "price": 2999,
-    "coverImage": "https://m.media-amazon.com/images/I/71kXa1M7CPL._SY466_.jpg"
+    "title": "Angular Masterclass",
+    "author": "Souvik Basu",
+    "price": 999,
+    "coverImage": "https://m.media-amazon.com/images/I/518sRoAvWtL._UF1000,1000_QL80_.jpg"
   },
   {
     "id": "2",
     "title": "Express.js in Action",
     "author": "Evan Hahn",
     "price": 3550,
-    "coverImage": "https://m.media-amazon.com/images/I/61r5f75dsEL._SY466_.jpg"
+    "coverImage": "https://m.media-amazon.com/images/I/715cq0+dN8L._AC_UF1000,1000_QL80_.jpg"
   },
   {
     "id": "3",
     "title": "Clean Code",
     "author": "Robert C. Martin",
     "price": 4200,
-    "coverImage": "https://m.media-amazon.com/images/I/41xShlnTZTL._SY445_SX342_.jpg"
+    "coverImage": "https://m.media-amazon.com/images/I/71nj3JM-igL._SY425_.jpg"
   },
   {
     "id": "4",
