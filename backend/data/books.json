@@ -4,21 +4,33 @@
     "title": "Angular Masterclass",
     "author": "Souvik Basu",
     "price": 999,
+<<<<<<< HEAD
     "image": "https://m.media-amazon.com/images/I/518sRoAvWtL._UF1000,1000_QL80_.jpg"
+=======
+    "coverImage": "https://m.media-amazon.com/images/I/518sRoAvWtL._UF1000,1000_QL80_.jpg"
+>>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
   },
   {
     "id": "2",
     "title": "Express.js in Action",
     "author": "Evan Hahn",
     "price": 3550,
+<<<<<<< HEAD
     "image": "https://m.media-amazon.com/images/I/715cq0+dN8L._AC_UF1000,1000_QL80_.jpg"
+=======
+    "coverImage": "https://m.media-amazon.com/images/I/715cq0+dN8L._AC_UF1000,1000_QL80_.jpg"
+>>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
   },
   {
     "id": "3",
     "title": "Clean Code",
     "author": "Robert C. Martin",
     "price": 4200,
+<<<<<<< HEAD
     "image": "https://m.media-amazon.com/images/I/71nj3JM-igL._SY425_.jpg"
+=======
+    "coverImage": "https://m.media-amazon.com/images/I/71nj3JM-igL._SY425_.jpg"
+>>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
   },
   {
     "id": "4",
