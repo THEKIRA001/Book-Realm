@@ -1,1 +1,36 @@
-<p>book-details works!</p>
+<div class="container page-container">
+    <div class="breadcrumb">
+        <a routerLink="/books" class="back-link">Back to Library</a>
+    </div>
+
+    @if (store.loading()) {
+    <div class="center-state">
+        {{ store.error() }}
+        <a routerLink="/books" class="btn btn-outline">Go Home</a>
+    </div>
+    }
+
+    @if (selectedBook(); as book) {
+    <div class="details-grid">
+        <div class="image-column">
+            <img [src]="book.image" [alt]="book.title" class="book-cover" />
+        </div>
+
+        <div class="info-column">
+            <h1 class="title">{{ book.title }}</h1>
+            <h3 class="author">by {{ book.author }}</h3>
+
+            <div class="price-tag">${{ book.price }}</div>
+
+            <div class="actions">
+                <button class="btn btn-primary btn-lg">Add to Cart</button>
+                <button class="btn btn-outline btn-lg">Wishlist</button>
+            </div>
+
+            <div class="meta-info">
+                <small>Product ID: {{ book.id }}</small>
+            </div>
+        </div>
+    </div>
+    }
+</div>

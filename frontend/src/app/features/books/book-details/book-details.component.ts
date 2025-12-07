@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BooksStore } from '../../../core/stores/books.store';
 
@@ -10,7 +10,7 @@ import { BooksStore } from '../../../core/stores/books.store';
   templateUrl: './book-details.component.html',
   styleUrl: './book-details.component.scss'
 })
-export class BookDetailsComponent {
+export class BookDetailsComponent implements OnInit{
   private route = inject(ActivatedRoute);
   readonly store = inject(BooksStore);
 
@@ -19,6 +19,7 @@ export class BookDetailsComponent {
   selectedBook = computed(() => {
     const id = this.selectedId();
     const map = this.store.entityMap();
+    return id ? map[id] : undefined;
   });
 
   ngOnInit(): void {
@@ -26,7 +27,10 @@ export class BookDetailsComponent {
     this.selectedId.set(id);
 
     if(id) {
-      const BookinInterview
+      const bookInMemory = this.store.entityMap()[id];
+      if(!bookInMemory){
+        this.store.loadBookById(id);
+      }
     }
   }
 }

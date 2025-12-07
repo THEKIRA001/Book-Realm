@@ -22,6 +22,22 @@ export const UserInfoStore = signalStore(
 
     withMethods((store, authService = inject(AuthService), router = inject(Router)) => ({
 
+        // register
+        register(userData: any){
+            patchState(store, {loading: true, error: null});
+
+            authService.register(userData).subscribe({
+                next: () => {
+                    patchState(store, {loading: false});
+                    router.navigate(['/login']);
+                }, 
+                error: (err) => {
+                    console.log(err);
+                    patchState(store, {loading: false, error: err.error?.message || 'Registration failed'});
+                }
+            })
+        },
+
         // login
         async login(credentials: LoginRequest){
             patchState(store, {loading: true, error: null});
