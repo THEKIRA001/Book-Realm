@@ -4,18 +4,18 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { readData, writeData } from '../services/db.service';
 import { User } from '../models/user.model';
+import { AuthRequest } from '../middleware/auth.middleware';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback-key';
 
-
 // Register User
 export const register = async (req: Request, res: Response) => {
-    try{
+    try {
         const { username, email, password } = req.body;
 
-        const users = await readData<User>('users');
+        const users = await readData<User>('users') || [];
 
-        if(users.find(u => u.email === email)){
+        if (users.find(u => u.email === email)) {
             return res.status(400).json({ message: 'User already exists' });
         }
 
@@ -26,14 +26,14 @@ export const register = async (req: Request, res: Response) => {
             username,
             email,
             password: hashedPassword,
-            avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${username}`
+            avatar: `https://ui-avatars.com/api/?name=${username}`
         }
 
         users.push(newUser);
         await writeData('users', users);
 
         res.status(201).json({ message: 'User registered successfully' });
-    } catch{
+    } catch {
         res.status(500).json({ message: 'Error registering user' });
     }
 }
@@ -41,29 +41,27 @@ export const register = async (req: Request, res: Response) => {
 
 // Login User
 export const login = async (req: Request, res: Response) => {
-    try{
+    try {
         const { email, password } = req.body;
 
         const users = await readData<User>('users');
 
         const user = users.find(u => u.email === email);
-        if(!user){
+        if (!user) {
             return res.status(400).json({ message: 'User Not Found' });
-        } else if(!(await bcrypt.compare(password, user.password))){
+        } else if (!(await bcrypt.compare(password, user.password))) {
             return res.status(400).json({ message: 'Invalid Credentials' });
         }
 
         const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '15m' });
 
-        res.cookie('auth_token', token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: 'strict',
-        });
-
         const { password: _, ...userWithoutPassword } = user;
-        res.json({ message: 'Login Successful', user: userWithoutPassword});
-    } catch{
+        res.status(200).json({
+            message: "Login successful",
+            user: userWithoutPassword,
+            token: token
+        });
+    } catch {
         res.status(500).json({ message: 'Error logging in' });
     }
 }
@@ -77,17 +75,19 @@ export const logout = (req: Request, res: Response) => {
 
 
 // Get User Profile
-export const getProfile = async (req: Request, res: Response) => {
-    try{
-        const userId = (req as any).user.id;
+export const getProfile = async (req: AuthRequest, res: Response) => {
+    try {
         const users = await readData<User>('users');
-        const user = users.find(u => u.id === userId);
 
-        if(!user) return res.status(404).json({ message: 'User Not Found' });
+        const user = users.find(u => u.id === req.user?.id);
+        
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
 
         const { password: _, ...userWithoutPassword } = user;
-        res.json({ user: userWithoutPassword });
-    } catch{
-        res.status(500).json({ message: 'Error fetching profile' });
+        res.json(userWithoutPassword);
+    } catch (err) {
+        res.status(500).json({ message: 'Server Error' });
     }
 }

@@ -1,31 +1,31 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink} from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { UserInfoStore } from '../../../core/stores/user-info.store';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, CommonModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  private fb = inject(FormBuilder);
-  private router = inject(Router);
-  readonly userInfoStore = inject(UserInfoStore);
-
+  fb = inject(FormBuilder);
+  store = inject(UserInfoStore); 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
+    password: ['', Validators.required]
   });
 
   onSubmit() {
-    if (this.loginForm.invalid) return;
-
-    const { email, password } = this.loginForm.value;
-    this.userInfoStore.login({ email: email as string, password: password as string });
-    
+    if (this.loginForm.valid) {
+      const credentials = {
+        email: this.loginForm.value.email!,
+        password: this.loginForm.value.password!
+      };
+      
+      this.store.login(credentials); 
+    }
   }
 }

@@ -1,11 +1,40 @@
 <nav class="navbar">
     <div class="container navbar-content">
-        <a routerLink="/" class="brand">
-            Book<span class="brand-highlight"> Realm</span> 
+        <a routerLink="/books" class="brand">
+            Book<span class="brand-highlight"> Realm</span>
         </a>
+
         <div class="nav-links">
+            @if (!store.user()) {
             <a routerLink="/login" class="nav-link">Log In</a>
             <a routerLink="/register" class="btn btn-primary">Register</a>
+            }
+
+            @else {
+            <div class="user-dropdown">
+                <div class="profile-trigger" (click)="toggleDropdown()">
+
+                    <img [src]="store.user()?.avatar || 'https://ui-avatars.com/api/?name=' + store.user()?.username"
+                        alt="Avatar" class="avatar" />
+
+                    <span class="username">{{ store.user()?.username }}</span>
+                    <span class="arrow">▼</span>
+                </div>
+
+                <div class="dropdown-menu" [class.show]="isDropdownOpen">
+                    <div class="dropdown-header">
+                        Signed in as <br>
+                        <strong>{{ store.user()?.email }}</strong>
+                    </div>
+                    <div class="divider"></div>
+                    <a routerLink="/profile" class="dropdown-item">My Profile</a>
+                    <div class="divider"></div>
+                    <button (click)="logout()" class="dropdown-item text-danger">
+                        Log Out
+                    </button>
+                </div>
+            </div>
+            }
         </div>
     </div>
 </nav>

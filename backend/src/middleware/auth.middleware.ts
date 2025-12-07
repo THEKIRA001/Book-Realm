@@ -13,20 +13,20 @@ export interface AuthRequest extends Request {
 }
 
 export const authenticateToken = (req: AuthRequest, res: Response, next: NextFunction) => {
-    const token = req.cookies['auth_token'];
+  const authHeader = req.headers.authorization;
+  
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'Access Denied. No token provided.' });
+  }
 
-    if(!token){
-        return res.status(401).json({ message: 'Access Denied: No Token Provided' });
-    }
+  const token = authHeader.split(' ')[1];
 
-    try{
-        const verified = jwt.verify(token, JWT_SECRET) as UserPayload;
-
-        (req as AuthRequest).user = verified;
-        next();
-    } catch (error){
-        res.clearCookie('auth_token');
-        return res.status(403).json({ message: 'Invalid Token'});
-    }
+  try {
+    const verified = jwt.verify(token, JWT_SECRET) as UserPayload;
+    req.user = verified; 
+    next();
+  } catch (err) {
+    res.status(400).json({ message: 'Invalid Token' });
+  }
 }
 

@@ -1,51 +1,9 @@
 [
   {
-    "id": "c6a219b5-5c02-4b77-8db1-6936d50ac416",
-    "username": "Shubham",
-    "email": "shubham@example.com",
-    "password": "$2b$10$9RRflT/B7vdd6lIgJxPLSOgCbh759I2ytzR5BU4se6ZEdSg8lQ77C",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Shubham"
-  },
-  {
-    "id": "a52e2388-4379-407a-be1a-b77f3786c28a",
-    "username": "Test 1",
-    "email": "test1@example.com",
-    "password": "$2b$10$YfvEZ622PG4/HOF201vk0eqLfBILE/6Ik7FRgwPHCFJiXabfVwCca",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Test 1"
-  },
-  {
-    "id": "4bb674b3-1dbb-4710-9f67-6b155ba8554a",
+    "id": "81495683-0a3e-49a6-b961-1b8fad30c9c4",
     "username": "Shubham Bolave",
     "email": "shubhambolave2@gmail.com",
-    "password": "$2b$10$5Iv6Zbf4MP2hF.Ois54nCOsFsbCBbu01jL5aZPw4KTqtPxuKsyG2q",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Shubham Bolave"
-  },
-  {
-    "id": "bd6b202c-11de-49d5-a988-abc35b65c0f1",
-    "username": "Shubham efefef",
-    "email": "shubhambolave123@gmail.com",
-    "password": "$2b$10$urqpEgJKpaiYfSDFaXf5WOLT/gGqgJI4UjP55XtgyCWe52ovJ6Xpq",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Shubham efefef"
-  },
-  {
-    "id": "b9652e0d-d82b-42bd-88d0-ef11cf971ad8",
-    "username": "Shubham Hugay",
-    "email": "shubhamH@example.com",
-    "password": "$2b$10$0JmTdpyAptx0W7wgljKNC.V2jIxfTJU.TmC4CT4pgCm1OEPrx6JeC",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Shubham Hugay"
-  },
-  {
-    "id": "860b91e0-1eed-4efa-b46a-93107da4a733",
-    "username": "Shubham Hugay",
-    "email": "shub1@gmail.com",
-    "password": "$2b$10$kksQfVETzT.AZToGyPQJHOgpvoU97dmpJISwx8oXsdztspuPdTYF6",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Shubham Hugay"
-  },
-  {
-    "id": "3f3d1dca-d87a-4f9e-ad31-0e1f0fc89b1c",
-    "username": "Hugay",
-    "email": "testing@gmail.com",
-    "password": "$2b$10$5lXbTbSi6T9VEtWV0iZg8OedhnOj7tKJsyR1Fm5eqPUPbERo.itaa",
-    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Hugay"
+    "password": "$2b$10$Usw/Ac1hYDXxVZ7gmxBBLuKAxI2hhE5d7x25OLkySWxON5vLEIJuS",
+    "avatar": "https://ui-avatars.com/api/?name=Shubham Bolave"
   }
 ]

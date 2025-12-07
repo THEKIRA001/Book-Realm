@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { UserInfoStore } from '../../core/stores/user-info.store';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +10,16 @@ import { RouterLink } from "@angular/router";
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  store = inject(UserInfoStore);
+  
+  isDropdownOpen = false;
 
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  logout() {
+    this.store.logout();
+    this.isDropdownOpen = false;
+  }
 }

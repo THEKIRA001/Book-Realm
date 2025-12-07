@@ -1,0 +1,22 @@
+<div class="profile-container">
+  <div class="profile-card">
+    
+    <img 
+      [src]="store.user()?.avatar || 'https://api.dicebear.com/7.x/avataaars/svg?seed=' + store.user()?.username" 
+      alt="Profile Avatar" 
+      class="avatar-large"
+    />
+
+    <div class="profile-info">
+      <h2>{{ store.user()?.username }}</h2>
+      <p class="email-text">{{ store.user()?.email }}</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <button (click)="onLogout()" class="btn-logout">
+      Log Out
+    </button>
+    
+  </div>
+</div>

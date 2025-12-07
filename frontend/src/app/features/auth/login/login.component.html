@@ -1,47 +1,51 @@
-<div class="container auth-container">
-    <div class="auth-card">
-        <h2>Welcome User</h2>
-        <p class="subtitle">Please, Enter your Credentials</p>
+<div class="login-container">
+  <div class="login-card">
+    <h2>Welcome User</h2>
+    <p class="subtitle">Please, Enter your Credentials</p>
 
-        @if (userInfoStore.error()) {
-        <div class="alert-error">
-            {{ userInfoStore.error() }}
-        </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          formControlName="email" 
+          placeholder="name@example.com"
+          [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          formControlName="password" 
+          placeholder="********"
+          [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        />
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid || store.loading()" class="btn-submit">
+        @if (store.loading()) {
+          Logging in...
+        } @else {
+          Login
         }
+      </button>
 
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" formControlName="email" placeholder="name@example.com"
-                    [class.error]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" />
-
-
-                @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
-                <small class="error-text">Please enter a valid email address.</small>
-                }
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" formControlName="password" placeholder="••••••••"
-                    [class.error]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-
-                @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
-                <small class="error-text">Password must be at least 6 characters.</small>
-                }
-            </div>
-
-            <button type="submit" class="btn btn-primary full-width" [disabled]="loginForm.invalid">
-                @if (userInfoStore.loading()) {
-                <span>Signing in...</span>
-                } @else {
-                <span>Log In</span>
-                }
-            </button>
-        </form>
-
-        <div class="auth-footer">
-            <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+      @if (store.error()) {
+        <div class="error-message">
+          {{ store.error() }}
         </div>
-    </div>
+      }
+
+      <div class="footer-link">
+        Don't have an account? 
+        <a routerLink="/register">Register here</a>
+      </div>
+
+    </form>
+  </div>
 </div>
