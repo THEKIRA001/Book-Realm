@@ -20,12 +20,13 @@
         <div class="info-column">
             <h1 class="title">{{ book.title }}</h1>
             <h3 class="author">by {{ book.author }}</h3>
-
+            @if (book.description) {
+                <div class="description"><h3>About the Book</h3>{{ book.description }}</div>
+            }
             <div class="price-tag">₹{{ book.price }}</div>
 
             <div class="actions">
                 <button class="btn btn-primary btn-lg">Add to Cart</button>
-                <button class="btn btn-outline btn-lg">Wishlist</button>
             </div>
         </div>
     </div>

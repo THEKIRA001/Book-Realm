@@ -1,12 +1,12 @@
 :root {
-    --primary: #4f46e5;
-    --primary-hover: #4338ca;
+    --primary: #00444f;
+    --primary-hover: #00889d;
 
-    --bg-body: #f8fafc;
-    --bg-card: #ffffff;
+    --bg-body: #005461;
+    --bg-card: #018790;
 
-    --text-main: #0f172a;
-    --text-muted: #64748b;
+    --text-main: #F4F4F4;
+    --text-muted: #00B7B5;
 
     --danger: #ef4444;
     --success: #22c55e;
@@ -67,7 +67,9 @@ body {
 
         &:hover {
             background-color: #f1f5f9;
-            border-color: var(--text-main);
+            border-color: var(--primary);
+            color: var(--primary);
+            text-shadow: 1px 1px 5px var(--text-main);
         }
     }
 }

@@ -4,6 +4,7 @@
 }
 
 .page-header {
+  text-shadow: 3px 3px 5px #002a32;
   margin-bottom: 3rem;
   text-align: center;
 
@@ -36,6 +37,7 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
+  text-shadow: 1px 1px 5px var(--primary);
 
   &:hover {
     transform: translateY(-5px);
@@ -85,12 +87,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0.75rem;
 }
 
 .book-price {
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--primary);
+  color: var(--text-main);
 }
 
 

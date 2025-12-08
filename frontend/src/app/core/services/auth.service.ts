@@ -21,8 +21,8 @@ export class AuthService {
     return this.http.post<{ user: User, token: string }>(`${this.apiUrl}/login`, credentials);
   }
 
-  // Get Profile
+  // Get Profile through Protected Route
   getProfile(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/profile`);
+    return this.http.get<User>(`${this.apiUrl}/protected/profile`);
   }
 }

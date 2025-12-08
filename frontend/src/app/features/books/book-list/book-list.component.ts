@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BooksStore } from '../../../core/stores/books.store';
 
@@ -8,7 +8,8 @@ import { BooksStore } from '../../../core/stores/books.store';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './book-list.component.html',
-  styleUrl: './book-list.component.scss'
+  styleUrl: './book-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookListComponent {
   readonly store = inject(BooksStore);

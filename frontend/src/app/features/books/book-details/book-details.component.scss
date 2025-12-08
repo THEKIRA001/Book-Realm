@@ -12,7 +12,7 @@
     transition: color 0.2s;
     
     &:hover {
-      color: var(--primary);
+      color: var(--text-main);
     }
   }
 }
@@ -46,6 +46,7 @@
 
 
 .info-column {
+  text-shadow: 3px 3px 5px #002a32;
   .title {
     font-size: 2.5rem;
     font-weight: 800;
@@ -61,10 +62,17 @@
     margin-bottom: 1.5rem;
   }
 
+  .description{
+    h3{
+      text-decoration: underline;
+    }
+  }
+
   .price-tag {
+    margin-top: 1rem;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--text-main);
     margin-bottom: 2rem;
   }
 }
