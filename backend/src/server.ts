@@ -1,6 +1,5 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import booksRoutes from './routes/books.routes';
 import authRoutes from './routes/auth.routes';
@@ -16,7 +15,6 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use(cookieParser());
 
 
 // Routes

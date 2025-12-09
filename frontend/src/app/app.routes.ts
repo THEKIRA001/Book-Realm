@@ -7,7 +7,7 @@ import { ProfileComponent } from './features/auth/profile/profile.component';
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-    { path:'', redirectTo: 'login', pathMatch: 'full'},
+    { path:'', redirectTo: 'books', pathMatch: 'full'},
     
     { path: 'books', component: BookListComponent },
     { path: 'books/:id', component: BookDetailsComponent },
@@ -15,5 +15,5 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent},
     { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
-    { path: '**', redirectTo: 'login' }
+    { path: '**', redirectTo: 'books' }
 ];
