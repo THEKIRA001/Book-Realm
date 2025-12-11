@@ -5,5 +5,12 @@
     "email": "shubhambolave2@gmail.com",
     "password": "$2b$10$Usw/Ac1hYDXxVZ7gmxBBLuKAxI2hhE5d7x25OLkySWxON5vLEIJuS",
     "avatar": "https://ui-avatars.com/api/?name=Shubham Bolave"
+  },
+  {
+    "id": "ee3fe1b8-c8d3-4a6e-82d9-e2a97052a355",
+    "username": "Admin",
+    "email": "admin@gmail.com",
+    "password": "$2b$10$SwegKQSa5O/7HM23ZTr6z.voYPTNuNRjKNfbtA7HMv0Uq/fWFA5Ae",
+    "avatar": "https://ui-avatars.com/api/?name=Admin"
   }
 ]

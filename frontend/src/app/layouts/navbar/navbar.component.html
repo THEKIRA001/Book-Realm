@@ -4,7 +4,19 @@
             Book<span class="brand-highlight"> Realm</span>
         </a>
 
+        
+
         <div class="nav-links">
+            <a routerLink="/cart" class="cart-link" title="View cart" aria-label="View cart">
+            <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 6h15l-1.5 9h-12z"></path>
+                <circle cx="9" cy="20" r="1"></circle>
+                <circle cx="18" cy="20" r="1"></circle>
+            </svg>
+
+            <span class="cart-badge" *ngIf="cartCount() > 0">{{ cartCount() }}</span>
+        </a>
             @if (!store.user()) {
             <a routerLink="/login" class="nav-link">Log In</a>
             <a routerLink="/register" class="btn btn-primary">Register</a>
@@ -28,6 +40,8 @@
                     </div>
                     <div class="divider"></div>
                     <a routerLink="/profile" class="dropdown-item">My Profile</a>
+                    <div class="divider"></div>
+                    <a routerLink="/orders" class="dropdown-item">My Orders</a>
                     <div class="divider"></div>
                     <button (click)="logout()" class="dropdown-item text-danger">
                         Log Out

@@ -1,0 +1,61 @@
+<div class="orders-page">
+  <h2 class="page-title">Your Orders</h2>
+
+  <div class="orders-container">
+    <div *ngIf="loading() && !orders().length" class="loading">
+      Loading orders...
+    </div>
+
+    <div *ngIf="error()" class="error">
+      {{ error() }}
+    </div>
+
+    <div *ngIf="!loading() && !orders().length && !error()" class="empty">
+      <p>You have not placed any orders yet.</p>
+      <a routerLink="/books" class="btn btn-outline">Browse books</a>
+    </div>
+
+    <ng-container *ngFor="let order of orders()">
+      <article class="order-card" role="article" [attr.aria-label]="'Order ' + (order.id || '')">
+        <header class="order-header">
+          <div class="order-meta-left">
+            <div class="order-id" title="{{ order.id }}">
+              Order ID:
+              <strong class="order-id-value">{{ shortId(order.id)}}</strong>
+            </div>
+            <div class="order-sub">
+              <span class="order-total">Total: {{ orderTotal(order) | currency:'INR':'symbol':'1.2-2' }}</span>
+            </div>
+          </div>
+
+          <div class="order-actions">
+            <button class="btn-toggle" (click)="toggleExpand(order.id)">
+              {{ expanded()[order.id] ? 'Hide details' : 'View details' }}
+            </button>
+          </div>
+        </header>
+
+        <div class="order-body" *ngIf="expanded()[order.id]">
+          <div class="items">
+            <div class="item" *ngFor="let item of order.items ?? []">
+              <div class="left">
+                <div class="title">{{ item.title }}</div>
+                <div class="meta">Qty: {{ item.quantity }} • Price: {{ (item.priceAtPurchase ?? item.price ?? 0) | currency:'INR':'symbol':'1.2-2' }}</div>
+              </div>
+              <div class="right">
+                <div class="subtotal">{{ ((item.priceAtPurchase ?? item.price ?? 0) * (item.quantity)) | currency:'INR':'symbol':'1.2-2' }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="order-footer">
+            <div class="placed-by">Placed At: <strong>{{ formatDate(order.placedAt) }}</strong></div>
+            <div class="footer-total">Order total: <strong>{{ orderTotal(order) | currency:'INR':'symbol':'1.2-2' }}</strong></div>
+          </div>
+        </div>
+      </article>
+    </ng-container>
+  </div>
+</div>

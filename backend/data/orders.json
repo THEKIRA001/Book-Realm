@@ -1,0 +1,70 @@
+[
+  {
+    "id": "9ef1db19-b6aa-4f1d-9dd6-2b716d872951",
+    "userId": "ee3fe1b8-c8d3-4a6e-82d9-e2a97052a355",
+    "items": [
+      {
+        "bookId": "2",
+        "title": "Android in Action, Second Edition",
+        "quantity": 1,
+        "price": 834.81
+      }
+    ],
+    "totalPrice": 834.81,
+    "placedAt": "2025-12-11T18:37:01.088Z"
+  },
+  {
+    "id": "6b037ac4-47bd-48a4-9043-95f40ab8f751",
+    "userId": "ee3fe1b8-c8d3-4a6e-82d9-e2a97052a355",
+    "items": [
+      {
+        "bookId": "3",
+        "title": "Specification by Example",
+        "quantity": 2,
+        "price": 1749.17
+      },
+      {
+        "bookId": "4",
+        "title": "Flex 3 in Action",
+        "quantity": 2,
+        "price": 1985.64
+      }
+    ],
+    "totalPrice": 7469.620000000001,
+    "placedAt": "2025-12-11T18:53:44.726Z"
+  },
+  {
+    "id": "307be2c6-22c0-40d7-b4e7-b3e6d6135f9a",
+    "userId": "ee3fe1b8-c8d3-4a6e-82d9-e2a97052a355",
+    "items": [
+      {
+        "bookId": "1",
+        "title": "Unlocking Android",
+        "quantity": 2,
+        "price": 729.5
+      },
+      {
+        "bookId": "3",
+        "title": "Specification by Example",
+        "quantity": 1,
+        "price": 1749.17
+      }
+    ],
+    "totalPrice": 3208.17,
+    "placedAt": "2025-12-11T18:56:06.031Z"
+  },
+  {
+    "id": "794369e2-2c78-469c-8521-936ef1d99a46",
+    "userId": "ee3fe1b8-c8d3-4a6e-82d9-e2a97052a355",
+    "items": [
+      {
+        "bookId": "24",
+        "title": "JSTL in Action",
+        "quantity": 1,
+        "price": 332.25
+      }
+    ],
+    "totalPrice": 332.25,
+    "placedAt": "2025-12-11T19:13:18.611Z"
+  }
+]

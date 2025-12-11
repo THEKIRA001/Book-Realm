@@ -7,9 +7,15 @@ import { Component, computed, inject, signal } from '@angular/core';
 >>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
 =======
 import { ChangeDetectionStrategy, Component, computed, inject, OnInit, signal } from '@angular/core';
+<<<<<<< HEAD
 >>>>>>> b45bb64 (Working on UI Looks & Styling)
 import { ActivatedRoute, RouterLink } from '@angular/router';
+=======
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+>>>>>>> 1addf3f (Added Carting System & Orders History)
 import { BooksStore } from '../../../core/stores/books.store';
+import { CartStore } from '../../../core/stores/cart.store';
+import { Book } from '../../../core/models/book.model';
 
 @Component({
   selector: 'app-book-details',
@@ -26,6 +32,8 @@ export class BookDetailsComponent {
 >>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
   private route = inject(ActivatedRoute);
   readonly store = inject(BooksStore);
+  private cartStore = inject(CartStore);
+  private router = inject(Router);
 
   selectedId = signal<string | null>(null);
 
@@ -52,5 +60,15 @@ export class BookDetailsComponent {
       const BookinInterview
 >>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
     }
+  }
+
+  onAddToCart(book: Book){
+    this.cartStore.addToCart(book);
+  }
+
+  onBuyNow(book: Book){
+    sessionStorage.setItem('allowCheckout', '1');
+    this.cartStore.addToCart(book);
+    this.router.navigate(['/checkout']);
   }
 }

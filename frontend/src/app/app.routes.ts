@@ -5,6 +5,9 @@ import { BookListComponent } from './features/books/book-list/book-list.componen
 import { BookDetailsComponent } from './features/books/book-details/book-details.component';
 import { ProfileComponent } from './features/auth/profile/profile.component';
 import { authGuard } from './core/guards/auth.guard';
+import { CartComponent } from './features/cart/cart.component';
+import { CheckoutComponent } from './features/checkout/checkout.component';
+import { OrdersComponent } from './features/orders/orders.component';
 
 export const routes: Routes = [
     { path:'', redirectTo: 'books', pathMatch: 'full'},
@@ -15,5 +18,10 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent},
     { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+
+    { path: 'cart', component: CartComponent },
+    { path: 'checkout', component: CheckoutComponent, canActivate: [authGuard] },
+    { path: 'orders', component: OrdersComponent, canActivate: [authGuard] },
+
     { path: '**', redirectTo: 'books' }
 ];

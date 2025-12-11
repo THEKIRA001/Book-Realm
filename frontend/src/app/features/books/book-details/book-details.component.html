@@ -23,10 +23,11 @@
             @if (book.description) {
                 <div class="description"><h3>About the Book</h3>{{ book.description }}</div>
             }
-            <div class="price-tag">₹{{ book.price }}</div>
+            <div class="price-tag">{{ book.price | currency: 'INR' : 'symbol':'1.2-2'}}</div>
 
             <div class="actions">
-                <button class="btn btn-primary btn-lg">Add to Cart</button>
+                <button class="btn btn-primary btn-lg" (click)="onAddToCart(book)">Add to Cart</button>
+                <button class="btn btn-outline btn-lg" (click)="onBuyNow(book)">Buy Now</button>
             </div>
         </div>
     </div>

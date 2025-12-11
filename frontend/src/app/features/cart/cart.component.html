@@ -1,0 +1,48 @@
+<div class="cart-page">
+    <h2>Your Cart</h2>
+
+    <ng-container *ngIf="cartItemsDetailed().length; else emptyCart">
+        <div class="cart-items">
+            <div class="cart-item" *ngFor="let item of cartItemsDetailed()">
+                <div class="image-column">
+                    <img [src]="item.book!.image" [alt]="item.book!.title " class="book-cover" />
+                </div>
+                <div class="info">
+                    <a [routerLink]="['/books', item.book!.id]">
+                        <h3>{{ item.book!.title }}</h3>
+                    </a>
+                    <p>by {{ item.book!.author }}</p>
+                    <p>Price: {{ item.book!.price | currency: 'INR' : 'symbol':'1.2-2'}}</p>
+                </div>
+
+                <div class="quantity-controls">
+                    <button (click)="onDecrease(item.book!.id)">-</button>
+                    <span>{{ item.quantity }}</span>
+                    <button (click)="onIncrease(item.book!.id)">+</button>
+                </div>
+
+                <div class="item-total">
+                    <p> Item total: {{(item.book!.price * item.quantity) | currency: 'INR': 'symbol':'1.2-2'}} </p>
+                    <button class="btn btn-outline" (click)="onRemove(item.book!.id)">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <p>Total items: {{ totalItems() }}</p>
+            <p>Total Price: <strong>{{ totalPrice() | currency:'INR' : 'symbol':'1.2-2'}}</strong></p>
+            <a (click)="onProceedToCheckout()" class="btn btn-primary">Proceed to Checkout</a>
+        </div>
+    </ng-container>
+
+    <ng-template #emptyCart>
+        <div class="empty-cart">
+            <p>Your Cart is Empty</p>
+            <a routerLink="/books">
+                <button class="btn btn-primary">Browse books</button>
+            </a>
+        </div>
+    </ng-template>
+
+
+</div>
