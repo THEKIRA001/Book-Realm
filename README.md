@@ -62,7 +62,8 @@ PORT=3000
 JWT_SECRET=super-secret-key
 ```
 
-```bash
+bash command
+```
 cd backend
 
 # Install dependencies
@@ -73,7 +74,8 @@ npm run dev
 ```
 
 ### 3. Frontend Setup
-```bash
+bash command
+```
 # Open a new terminal
 cd frontend
 
@@ -89,33 +91,9 @@ Open your browser and navigate to: http://localhost:4200
 
 
 📂 Project Structure
-Bash
 
-book-realm/
-├── backend/
-│   ├── src/
-│   │   ├── controllers/   # Logic for Auth, Books, Orders
-│   │   ├── middleware/    # Auth guards (JWT verification)
-│   │   ├── models/        # TypeScript Interfaces
-│   │   ├── routes/        # API Route definitions
-│   │   ├── services/      # File System DB Logic
-│   │   └── server.ts      # Entry point
-│   ├── data/              # JSON database files (Generated on run)
-│   └── package.json
-│
-├── frontend/
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── core/
-│   │   │   │   ├── guards/           # Auth Guard
-│   │   │   │   ├── interceptors/     # JWT Interceptor
-│   │   │   │   ├── models/           # Shared Interfaces
-│   │   │   │   ├── services/         # API Calls
-│   │   │   │   └── stores/           # NgRx Signal Stores (Logic Hub)
-│   │   │   ├── features/             # Pages (Auth, Books, Cart, Orders)
-│   │   │   ├── layouts/              # Navbar
-│   │   │   └── shared/components/    # Toast
-│   └── angular.json
+<img width="729" height="604" alt="image" src="https://github.com/user-attachments/assets/53ec296d-8720-49eb-b406-af602d2d8ca5" />
+
 
 
 
