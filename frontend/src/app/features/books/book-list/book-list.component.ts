@@ -16,11 +16,11 @@ export class BookListComponent {
 
   currentPage = signal(1);
   pageSize = 8;
-  totalPages = computed(() => Math.ceil(this.store.allBooks().length / this.pageSize));
+  totalPages = computed(() => Math.ceil(this.store.availableBooks().length / this.pageSize));
   paginatedBooks = computed(() => {
     const startIndex = (this.currentPage() - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
-    return this.store.allBooks().slice(startIndex, endIndex);
+    return this.store.availableBooks().slice(startIndex, endIndex);
   });
 
   ngOnInit(){

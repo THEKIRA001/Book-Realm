@@ -1,0 +1,9 @@
+@if (store.uiError()) {
+<div class="toast-container" @fadeInOut>
+    <div class="toast-content">
+        <span class="icon">⚠️</span>
+        <span class="message">{{ store.uiError() }}</span>
+        <button class="close-btn" (click)="close()">×</button>
+    </div>
+</div>
+}

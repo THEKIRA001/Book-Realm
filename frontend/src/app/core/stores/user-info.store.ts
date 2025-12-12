@@ -3,6 +3,7 @@ import { LoginRequest, User } from "../models/user.model";
 import { AuthService } from "../services/auth.service";
 import { inject } from "@angular/core";
 import { Router } from "@angular/router";
+import { CartStore } from "./cart.store";
 
 export interface UserInfoState {
     user: User | null;
@@ -22,7 +23,7 @@ export const UserInfoStore = signalStore(
     { providedIn: 'root' },
     withState(initialState),
 
-    withMethods((store, authService = inject(AuthService), router = inject(Router)) => ({
+    withMethods((store, authService = inject(AuthService), router = inject(Router), cartStore = inject(CartStore)) => ({
 
         // register
         register(userData: any) {
@@ -35,7 +36,7 @@ export const UserInfoStore = signalStore(
                 },
                 error: (err) => {
                     console.error(err);
-                    patchState(store, { loading: false, error: err.error?.message || 'Registration failed' });
+                    cartStore.showToast(err.error?.message || 'Registration failed');
                 }
             })
         },

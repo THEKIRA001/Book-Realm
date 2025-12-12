@@ -51,10 +51,19 @@ export const createOrder = async (req: AuthRequest, res: Response) => {
         return res.status(400).json({ message: 'Invalid cart item' });
       }
 
-      const book = books.find(b => b.id === bookId);
+      const bookIndex = books.findIndex(b => b.id === bookId);
+      const book = books[bookIndex];
       if (!book) {
         return res.status(400).json({ message: `Book not found: ${bookId}` });
       }
+
+      if (book.quantity < quantity) {
+        return res.status(400).json({ 
+            message: `Insufficient stock for book: ${book.title}. Only ${book.quantity} left.` 
+        });
+      }
+
+      books[bookIndex].quantity -= quantity;
 
       const price = book.price;
 
@@ -67,7 +76,10 @@ export const createOrder = async (req: AuthRequest, res: Response) => {
 
       orderItems.push(orderItem);
       totalPrice += price * quantity;
+      
     }
+
+    await writeData<Book>('books', books);
 
     const newOrder: Order = {
       id: uuidv4(),

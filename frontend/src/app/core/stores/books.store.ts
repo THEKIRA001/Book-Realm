@@ -18,7 +18,8 @@ export const BooksStore = signalStore(
     }),
     withComputed(({ entities }) => ({
         allBooks: computed(() => entities()),
-        totalBooks: computed(() => entities().length)
+        totalBooks: computed(() => entities().length),
+        availableBooks: computed(() => entities().filter(b => b.quantity > 0))
     })),
     withMethods((store, booksService = inject(BooksService)) => ({
         loadBooks() {

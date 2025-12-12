@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CartStore } from '../../core/stores/cart.store';
+import { UserInfoStore } from '../../core/stores/user-info.store';
 
 @Component({
   selector: 'app-cart',
@@ -14,6 +15,7 @@ import { CartStore } from '../../core/stores/cart.store';
 export class CartComponent {
   private cartStore = inject(CartStore);
   private router = inject(Router);
+  private userStore = inject(UserInfoStore);
 
   cartItemsDetailed = this.cartStore.cartItemsDetailed;
   totalItems = this.cartStore.totalItems;
@@ -38,6 +40,11 @@ export class CartComponent {
   }
 
   onProceedToCheckout() {
+    if (!this.userStore.jwtToken()) {
+        this.cartStore.showToast('You need to login to proceed to Checkout');
+        this.router.navigate(['/login']);
+        return;
+    }
     sessionStorage.setItem('allowCheckout', '1');
     this.router.navigate(['/checkout']);
   }

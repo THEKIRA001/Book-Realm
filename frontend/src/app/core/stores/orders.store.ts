@@ -4,6 +4,7 @@ import { OrdersService } from '../services/orders.service';
 import { Order } from '../models/order.model';
 import { CartStore } from './cart.store';
 import { firstValueFrom } from 'rxjs';
+import { BooksStore } from './books.store';
 
 interface OrdersState {
     orders: Order[];
@@ -31,7 +32,9 @@ export const OrdersStore = signalStore(
         (
             store,
             ordersService = inject(OrdersService),
-            cartStore = inject(CartStore)
+            cartStore = inject(CartStore),
+            booksStore = inject(BooksStore)
+
         ) => ({
             async loadOrders() {
                 patchState(store, { loading: true, error: null });
@@ -88,6 +91,7 @@ export const OrdersStore = signalStore(
                         const current = store.orders();
                         patchState(store, { orders: [...current, created] });
                         cartStore.clearCart();
+                        booksStore.loadBooks();
                         patchState(store, { loading: false });
                         return created;
                     } else {

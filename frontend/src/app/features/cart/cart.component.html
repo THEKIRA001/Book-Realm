@@ -18,7 +18,9 @@
                 <div class="quantity-controls">
                     <button (click)="onDecrease(item.book!.id)">-</button>
                     <span>{{ item.quantity }}</span>
-                    <button (click)="onIncrease(item.book!.id)">+</button>
+                    <button [disabled]="item.quantity >= item.book.quantity"
+                        [style.opacity]="item.quantity >= item.book.quantity ? '0.5' : '1'"
+                        (click)="onIncrease(item.book!.id)">+</button>
                 </div>
 
                 <div class="item-total">

@@ -1,57 +1,10 @@
 [
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "id": "1",
-<<<<<<< HEAD
-    "title": "Angular Masterclass",
-    "author": "Souvik Basu",
-    "price": 999,
-<<<<<<< HEAD
-    "image": "https://m.media-amazon.com/images/I/518sRoAvWtL._UF1000,1000_QL80_.jpg"
-=======
-    "coverImage": "https://m.media-amazon.com/images/I/518sRoAvWtL._UF1000,1000_QL80_.jpg"
->>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
-=======
-    "title": "The Angular Masterclass",
-    "author": "Sarah Smith",
-    "price": 2999,
-    "image": "https://m.media-amazon.com/images/I/518sRoAvWtL._SY425_.jpg"
->>>>>>> dea3419 (Added Profile Page)
-  },
-  {
-    "id": "2",
-    "title": "Express.js in Action",
-    "author": "Evan Hahn",
-    "price": 3550,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "image": "https://m.media-amazon.com/images/I/715cq0+dN8L._AC_UF1000,1000_QL80_.jpg"
-=======
-    "coverImage": "https://m.media-amazon.com/images/I/715cq0+dN8L._AC_UF1000,1000_QL80_.jpg"
->>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
-=======
-    "image": "https://hive.dmmserver.com/media/640/97816172/9781617292422.jpg"
->>>>>>> dea3419 (Added Profile Page)
-  },
-  {
-    "id": "3",
-    "title": "Clean Code",
-    "author": "Robert C. Martin",
-    "price": 4200,
-<<<<<<< HEAD
-    "image": "https://m.media-amazon.com/images/I/71nj3JM-igL._SY425_.jpg"
-=======
-    "coverImage": "https://m.media-amazon.com/images/I/71nj3JM-igL._SY425_.jpg"
->>>>>>> 3dffbaf (Final push of the say. sorry that was mww magnus)
-=======
-    "id": 1,
-=======
-    "id": "1",
->>>>>>> 1addf3f (Added Carting System & Orders History)
     "title": "Unlocking Android",
     "author": "W. Frank Ableson",
     "price": 729.5,
+    "quantity": 10,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg",
     "description": "Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout."
   },
@@ -60,6 +13,7 @@
     "title": "Android in Action, Second Edition",
     "author": "W. Frank Ableson",
     "price": 834.81,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson2.jpg",
     "description": "Android in Action, Second Edition is a comprehensive tutorial for Android developers. Taking you far beyond \"Hello Android,\" this fast-paced book puts you in the driver's seat as you learn important architectural concepts and implementation strategies. You'll master the SDK, build WebKit apps using HTML 5, and even learn to extend or replace Android's built-in features by building useful and intriguing examples. "
   },
@@ -68,14 +22,15 @@
     "title": "Specification by Example",
     "author": "Gojko Adzic",
     "price": 1749.17,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/adzic.jpg"
->>>>>>> b45bb64 (Working on UI Looks & Styling)
   },
   {
     "id": "4",
     "title": "Flex 3 in Action",
     "author": "Tariq Ahmed with Jon Hirschi",
     "price": 1985.64,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ahmed.jpg"
   },
   {
@@ -83,6 +38,7 @@
     "title": "Flex 4 in Action",
     "author": "Tariq Ahmed",
     "price": 1207.47,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ahmed2.jpg"
   },
   {
@@ -90,6 +46,7 @@
     "title": "Collective Intelligence in Action",
     "author": "Satnam Alag",
     "price": 1949.65,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/alag.jpg"
   },
   {
@@ -97,6 +54,7 @@
     "title": "Zend Framework in Action",
     "author": "Rob Allen",
     "price": 779.03,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/allen.jpg",
     "description": "Zend Framework in Action is a comprehensive tutorial that shows how to use the Zend Framework to create web-based applications and web services. This book takes you on an over-the-shoulder tour of the components of the Zend Framework as you build a high quality, real-world web application."
   },
@@ -105,6 +63,7 @@
     "title": "Flex on Java",
     "author": "Bernerd Allmon",
     "price": 347.83,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/allmon.jpg",
     "description": "   A beautifully written book that is a must have for every Java Developer.       Ashish Kulkarni, Technical Director, E-Business Software Solutions Ltd."
   },
@@ -113,6 +72,7 @@
     "title": "Griffon in Action",
     "author": "Andres Almiray",
     "price": 1930.15,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/almiray.jpg",
     "description": "Griffon in Action is a comprehensive tutorial written for Java developers who want a more productive approach to UI development. In this book, you'll immediately dive into Griffon. After a Griffon orientation and a quick Groovy tutorial, you'll start building examples that explore Griffon's high productivity approach to Swing development. One of the troublesome parts of Swing development is the amount of Java code that is required to get a simple application off the ground."
   },
@@ -121,6 +81,7 @@
     "title": "OSGi in Depth",
     "author": "Alexandre de Castro Alves",
     "price": 1258.61,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/alves.jpg",
     "description": "Enterprise OSGi shows a Java developer how to develop to the OSGi Service Platform Enterprise specification, an emerging Java-based technology for developing modular enterprise applications. Enterprise OSGi addresses several shortcomings of existing enterprise platforms, such as allowing the creation of better maintainable and extensible applications, and provide a simpler, easier-to-use, light-weight solution to enterprise software development."
   },
@@ -129,6 +90,7 @@
     "title": "Flexible Rails",
     "author": "Peter Armstrong",
     "price": 1421.63,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/armstrong.jpg",
     "description": "\"Flexible Rails created a standard to which I hold other technical books. You definitely get your money's worth.\""
   },
@@ -137,6 +99,7 @@
     "title": "Hello! Flex 4",
     "author": "Peter Armstrong",
     "price": 1493.72,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/armstrong3.jpg",
     "description": "Hello! Flex 4 progresses through 26 self-contained examples selected so you can progressively master Flex. They vary from small one-page apps, to a 3D rotating haiku, to a Connect Four-like game. And in the last chapter you'll learn to build a full Flex application called SocialStalkr   a mashup that lets you follow your friends by showing their tweets on a Yahoo map."
   },
@@ -145,6 +108,7 @@
     "title": "Coffeehouse",
     "author": "Levi Asher",
     "price": 1889.15,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/asher.jpg",
     "description": "Coffeehouse is an anthology of stories, poems and essays originally published on the World Wide Web."
   },
@@ -153,6 +117,7 @@
     "title": "Team Foundation Server 2008 in Action",
     "author": "Jamil Azher",
     "price": 1685.77,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/azher.jpg"
   },
   {
@@ -160,6 +125,7 @@
     "title": "Brownfield Application Development in .NET",
     "author": "Kyle Baley",
     "price": 1146.42,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/baley.jpg",
     "description": "Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you've learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change."
   },
@@ -168,6 +134,7 @@
     "title": "MongoDB in Action",
     "author": "Kyle Banker",
     "price": 883.81,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker.jpg",
     "description": "MongoDB In Action is a comprehensive guide to MongoDB for application developers. The book begins by explaining what makes MongoDB unique and describing its ideal use cases. A series of tutorials designed for MongoDB mastery then leads into detailed examples for leveraging MongoDB in e-commerce, social networking, analytics, and other common applications."
   },
@@ -175,13 +142,17 @@
     "id": "17",
     "title": "Distributed Application Development with PowerBuilder 6.0",
     "author": "Michael J. Barlotta",
-    "price": 461.36
+    "price": 461.36,
+    "quantity": 100,
+    "image": "https://m.media-amazon.com/images/I/5141FKG61ML._SX342_SY445_FMwebp_.jpg",
+    "description": "Distributed computing means programs that run on two or more systems. This text provides information on Distributed PowerBuilder. It builds a simple application step-by-step, and discusses all of the concepts and components needed for building a PowerBuilder application."
   },
   {
     "id": "18",
     "title": "Jaguar Development with PowerBuilder 7",
     "author": "Michael Barlotta",
     "price": 117.15,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta2.jpg",
     "description": "Jaguar Development with PowerBuilder 7 is the definitive guide to distributed application development with PowerBuilder. It is the only book dedicated to preparing PowerBuilder developers for Jaguar applications and has been approved by Sybase engineers and product specialists who build the tools described in the book."
   },
@@ -189,7 +160,8 @@
     "id": "19",
     "title": "Taming Jaguar",
     "author": "Michael J. Barlotta",
-    "price": 1918.0,
+    "price": 1918,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta3.jpg"
   },
   {
@@ -197,6 +169,7 @@
     "title": "3D User Interfaces with Java 3D",
     "author": "Jon Barrilleaux",
     "price": 376.88,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barrilleaux.jpg"
   },
   {
@@ -204,6 +177,7 @@
     "title": "Hibernate in Action",
     "author": "Christian Bauer",
     "price": 364.19,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bauer.jpg",
     "description": "\"2005 Best Java Book!\" -- Java Developer's Journal"
   },
@@ -212,6 +186,7 @@
     "title": "Hibernate in Action (Chinese Edition)",
     "author": "Christian Bauer",
     "price": 976.94,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bauer-cn.jpg"
   },
   {
@@ -219,6 +194,7 @@
     "title": "Java Persistence with Hibernate",
     "author": "Christian Bauer",
     "price": 463.35,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bauer2.jpg",
     "description": "\"...this book is the ultimate solution. If you are going to use Hibernate in your application, you have no other choice, go rush to the store and get this book.\" --JavaLobby"
   },
@@ -227,6 +203,7 @@
     "title": "JSTL in Action",
     "author": "Shawn Bayern",
     "price": 332.25,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bayern.jpg"
   },
   {
@@ -234,6 +211,7 @@
     "title": "iBATIS in Action",
     "author": "Clinton Begin",
     "price": 532.2,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/begin.jpg",
     "description": "   Gets new users going and gives experienced users in-depth coverage of advanced features.       Jeff Cunningham, The Weather Channel Interactive"
   },
@@ -242,6 +220,7 @@
     "title": "Designing Hard Software",
     "author": "Douglas W. Bennett",
     "price": 101.71,
+    "quantity": 100,
     "description": "\"This book is well written ... The author does not fear to be controversial. In doing so, he writes a coherent book.\" --Dr. Frank J. van der Linden, Phillips Research Laboratories"
   },
   {
@@ -249,6 +228,7 @@
     "title": "Hibernate Search in Action",
     "author": "Emmanuel Bernard",
     "price": 1095.45,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bernard.jpg",
     "description": "\"A great resource for true database independent full text search.\" --Aaron Walker, base2Services"
   },
@@ -257,6 +237,7 @@
     "title": "jQuery in Action",
     "author": "Bear Bibeault",
     "price": 988.97,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bibeault.jpg",
     "description": "\"The best-thought-out and researched piece of literature on the jQuery library.\" --From the forward by John Resig, Creator of jQuery"
   },
@@ -265,6 +246,7 @@
     "title": "jQuery in Action, Second Edition",
     "author": "Bear Bibeault",
     "price": 333.77,
+    "quantity": 100,
     "image": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bibeault2.jpg",
     "description": "jQuery in Action, Second Edition is a fast-paced introduction to jQuery that will take your JavaScript programming to the next level. An in-depth rewrite of the bestselling first edition, this edition provides deep and practical coverage of the latest jQuery and jQuery UI releases. The book's unique \"lab pages\" anchor the explanation of each new concept in a practical example. You'll learn how to traverse HTML documents, handle events, perform animations, and add Ajax to your web pages. This comprehensive guide also teaches you how jQuery interacts with other tools and frameworks and how to build jQuery plugins. "
   }
