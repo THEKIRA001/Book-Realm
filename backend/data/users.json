@@ -12,5 +12,12 @@
     "email": "admin@gmail.com",
     "password": "$2b$10$SwegKQSa5O/7HM23ZTr6z.voYPTNuNRjKNfbtA7HMv0Uq/fWFA5Ae",
     "avatar": "https://ui-avatars.com/api/?name=Admin"
+  },
+  {
+    "id": "d63bc2f1-7952-4e8f-ac77-409ef7bde887",
+    "username": "Shubham Hugay",
+    "email": "hugay@gmail.com",
+    "password": "$2b$10$xBWdPIKOSMiWyYIfQyJPfuNv4FaoTZfqjRQpnFTlH7s8A99vqeaJe",
+    "avatar": "https://ui-avatars.com/api/?name=Shubham Hugay"
   }
 ]

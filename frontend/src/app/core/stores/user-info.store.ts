@@ -5,6 +5,15 @@ import { inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { CartStore } from "./cart.store";
 
+function isTokenExpired(token: string): boolean {
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return Math.floor(Date.now() / 1000) >= payload.exp;
+  } catch (e) {
+    return true;
+  }
+}
+
 export interface UserInfoState {
     user: User | null;
     jwtToken: string | null;
@@ -47,8 +56,8 @@ export const UserInfoStore = signalStore(
 
             authService.login(credentials).subscribe({
                 next: (response: any) => {
-                    localStorage.setItem('token', response.token);
-                    localStorage.setItem('user', JSON.stringify(response.user));
+                    sessionStorage.setItem('token', response.token);
+                    sessionStorage.setItem('user', JSON.stringify(response.user));
 
                     patchState(store, { 
                         user: response.user, 
@@ -76,10 +85,8 @@ export const UserInfoStore = signalStore(
 
         // logout
         logout() {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-
-            // 2. Clear Store
+            sessionStorage.removeItem('token');
+            sessionStorage.removeItem('user');
             patchState(store, { user: null, jwtToken: null });
             router.navigate(['/login']);
         }
@@ -87,14 +94,20 @@ export const UserInfoStore = signalStore(
 
     withHooks({
         onInit(store) {
-            const storedUser = localStorage.getItem('user');
-            const storedToken = localStorage.getItem('token');
+            const storedUser = sessionStorage.getItem('user');
+            const storedToken = sessionStorage.getItem('token');
 
             if (storedUser && storedToken) {
-                patchState(store, {
-                    user: JSON.parse(storedUser),
-                    jwtToken: storedToken
-                });
+                if (isTokenExpired(storedToken)) {
+                    sessionStorage.removeItem('token');
+                    sessionStorage.removeItem('user');
+                    store.logout();
+                } else {
+                    patchState(store, {
+                        user: JSON.parse(storedUser),
+                        jwtToken: storedToken
+                    });
+                }
             }
         }
     })

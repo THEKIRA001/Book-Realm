@@ -90,20 +90,53 @@ npm start
 Open your browser and navigate to: http://localhost:4200
 
 
-📂 Project Structure
+---
+
+
+## 📂 Project Structure
 
 <img width="729" height="604" alt="image" src="https://github.com/user-attachments/assets/53ec296d-8720-49eb-b406-af602d2d8ca5" />
 
 
+---
 
 
-🧪 Key Functionalities to Try
-Register & Login: Create a new account.
+## 🧪 Key Functionalities to Try
+* **Register & Login**: Create a new account.
+* **Browse**: View the paginated list of books.
+* **Manage Cart**: Add items. Try adding more than the available quantity (e.g., >100) to see the Toast Error.
+* **Checkout**: Proceed to checkout. If not logged in, you will be redirected with a notification.
+* **Profile**: Check your order history in the "My Orders" section.
 
-Browse: View the paginated list of books.
 
-Manage Cart: Add items. Try adding more than the available quantity (e.g., >100) to see the Toast Error.
+---
 
-Checkout: Proceed to checkout. If not logged in, you will be redirected with a notification.
 
-Profile: Check your order history in the "My Orders" section.
+## 🔄 Application Workflow
+
+1.  **Authentication**
+    * Users **Register** or **Login** via the frontend.
+    * The backend verifies credentials and issues a **JSON Web Token (JWT)**.
+    * The token is stored in the frontend state to authenticate future requests.
+
+2.  **Browsing & Inventory**
+    * The application fetches the book catalog from the backend (`books.json`).
+    * **Frontend Logic:** Books with `0` quantity are automatically filtered out from the browse view.
+
+3.  **Shopping Cart**
+    * Users add books to their cart, which persists in local storage.
+    * **Validation:** The UI prevents users from adding more items than currently available in stock.
+    * Unauthenticated users can build a cart but are redirected to login upon checkout.
+
+4.  **Order Processing**
+    * When a user places an order, a secure API request is sent with the JWT.
+    * **Backend Logic:**
+        1.  Verifies the user identity.
+        2.  Re-checks stock availability on the server side.
+        3.  **Deducts** the sold quantity from the global inventory file.
+        4.  Records the transaction in `orders.json`.
+
+5.  **State Synchronization**
+    * Upon success, the frontend clears the cart.
+    * The **Books Store** automatically reloads to reflect the new, lower stock levels immediately.
+    * The user is redirected to their **Order History** to view the purchase details.
